@@ -30,7 +30,7 @@ public class PriorityViajes {
         return viaje;
     }
 
-    public void modificarPrioridad(String idViaje, int nuevaPrioridad) throws MissingTripException {
+    public void modificarPrioridad(String idViaje, int nuevaPrioridad){
         LinkedListADT<Viaje> viajes = new LinkedListADTDynamic<>();
         LinkedListADT<Integer> prioridades = new LinkedListADTDynamic<>();
         boolean encontrado = false;

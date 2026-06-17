@@ -18,10 +18,6 @@ public class Viaje {
     }
 
     public String getId(){return id;}
-    public Ruta getRuta() {return ruta;}
-    public Micro getMicro(){return micro;}
-    public LocalDate getFecha(){return fecha;}
-    public int getPrioridad(){return prioridad;}
 
     public void setFecha(LocalDate nuevaFecha){this.fecha = nuevaFecha;}
     public void setPrioridad(int nuevaPrioridad){this.prioridad=nuevaPrioridad;}

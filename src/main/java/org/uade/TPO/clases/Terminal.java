@@ -13,9 +13,6 @@ public class Terminal {
         return code;
     }
 
-    public String getDesc() {
-        return description;
-    }
 
     @Override
     public boolean equals(Object obj) {

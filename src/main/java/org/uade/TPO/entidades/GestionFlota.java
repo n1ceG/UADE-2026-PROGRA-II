@@ -33,12 +33,12 @@ public class GestionFlota {
         return resultado;
     }
 
-    public boolean consultarDisponibilidad(String id) throws MissingVehicleException {
+    public boolean consultarDisponibilidad(String id){
         if(!sistema.getMicros().getKeys().exist(id)) throw new MissingVehicleException("El micro "+id+" no está registrado.");
         else return sistema.getMicros().get(id).isAvailable();
     }
 
-    public void actualizarDisponibilidad(String id, boolean disponible) throws MissingVehicleException {
+    public void actualizarDisponibilidad(String id, boolean disponible){
         if(!sistema.getMicros().getKeys().exist(id)) throw new MissingVehicleException("El micro "+id+" no está registrado.");
         else sistema.getMicros().get(id).setDisponible(disponible);
     }

@@ -17,7 +17,6 @@ public class Micro {
     }
 
     public String getId(){return id;}
-    public TipoMicro getTipo(){return tipo;}
     public boolean isAvailable(){return disponible;}
 
     public void setDisponible(boolean bool){this.disponible = bool;}

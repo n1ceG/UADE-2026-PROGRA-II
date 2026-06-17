@@ -48,7 +48,7 @@ public class SistemaOperaciones {
     public Terminal getTerminalPorIndice(int i){return indiceATerminal.get(i);}
     public SimpleDictionaryADT<String, Integer> getUsosPorRuta(){ return usosPorRuta; }
 
-    public void agregarTerminal(Terminal t) throws ExistingTerminalException {
+    public void agregarTerminal(Terminal t){
         if(codigoAIndice.getKeys().exist((t.getCode()))) {throw new ExistingTerminalException("La terminal " + t.getCode() + " ya está dada de alta.");} // Si ya existe, no hace nada
         codigoAIndice.add(t.getCode(), proximoIndice);
         indiceATerminal.add(proximoIndice, t);
@@ -56,7 +56,7 @@ public class SistemaOperaciones {
         proximoIndice++;
     }
 
-    public void agregarRuta(Ruta r) throws MissingTerminalException, ExistingRoadException {
+    public void agregarRuta(Ruta r){
         String codigoOrigen = r.getStart().getCode();
         String codigoDestino = r.getEnd().getCode();
         if (!codigoAIndice.getKeys().exist(codigoOrigen)) {throw new MissingTerminalException("La terminal " + codigoOrigen + " no está registrada.");}
@@ -68,7 +68,7 @@ public class SistemaOperaciones {
         usosPorRuta.add(codigoOrigen+"-"+codigoDestino, 0);
     }
 
-    public void crearViaje(String idViaje, Ruta ruta, String idMicro, LocalDate fecha, int prioridad) throws MissingTerminalException, ExistingTripException, MissingVehicleException, MissingRoadException {
+    public void crearViaje(String idViaje, Ruta ruta, String idMicro, LocalDate fecha, int prioridad){
         if(viajes.getKeys().exist(idViaje)){throw new ExistingTripException("El viaje " + idViaje + " ya existe.");}
         if(!micros.getKeys().exist(idMicro)){throw new MissingVehicleException("El micro " + idMicro + " no existe.");}
         String codigoOrigen = ruta.getStart().getCode();
@@ -86,7 +86,7 @@ public class SistemaOperaciones {
         usosPorRuta.add(claveRuta, usosPorRuta.get(claveRuta)+1);
     }
 
-    public void agregarMicro(Micro m) throws ExistingVehicleException {
+    public void agregarMicro(Micro m){
         if(micros.getKeys().exist(m.getId())) {throw new ExistingVehicleException("El micro ya está dado de alta.");}
         micros.add(m.getId(), m);
     }
@@ -163,8 +163,4 @@ public class SistemaOperaciones {
         }
         return resultado;
     }
-
-
-
-
 }

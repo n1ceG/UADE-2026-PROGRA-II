@@ -16,7 +16,7 @@ public class SimulacionReportes {
         this.sistema = sistema;
     }
 
-    public void reprogramarViaje(String id, LocalDate fecha) throws MissingTripException {
+    public void reprogramarViaje(String id, LocalDate fecha){
         if(!sistema.getViajes().getKeys().exist(id)){throw new MissingTripException("El viaje "+id+" no está registrado.");}
         sistema.getViajes().get(id).setFecha(fecha);
     }
@@ -41,7 +41,7 @@ public class SimulacionReportes {
             totalViajes++;
             clavesViajes.remove(clave);
         }
-        // Contar viajes
+
 
         // Contar micros
         SetADT<String> clavesMicros = sistema.getMicros().getKeys();
@@ -51,7 +51,7 @@ public class SimulacionReportes {
             totalMicros++;
             clavesMicros.remove(clave);
         }
-        // Contar micros
+
 
         if(totalMicros==0){return 0;}
         return (double) totalViajes/totalMicros;

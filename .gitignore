@@ -37,3 +37,8 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Catedra (entrega) ###
+.idea/
+bin/
+*.zip

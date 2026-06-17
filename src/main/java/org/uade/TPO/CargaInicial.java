@@ -1,15 +1,16 @@
 package org.uade.TPO;
 
-import org.uade.TPO.clases.*;
+import org.uade.TPO.clases.Micro;
+import org.uade.TPO.clases.Ruta;
 import org.uade.TPO.clases.Terminal;
+import org.uade.TPO.clases.TipoMicro;
 import org.uade.TPO.entidades.SistemaOperaciones;
-import org.uade.structure.exception.*;
 
 import java.time.LocalDate;
 
 public class CargaInicial {
 
-    public static void cargar(SistemaOperaciones sistema) throws ExistingTerminalException, ExistingVehicleException, ExistingRoadException, ExistingTripException, MissingVehicleException, MissingRoadException {
+    public static void cargar(SistemaOperaciones sistema){
         Terminal bue = new Terminal("BUE", "Buenos Aires");
         Terminal cor = new Terminal("COR", "Cordoba");
         Terminal ros = new Terminal("ROS", "Rosario");
